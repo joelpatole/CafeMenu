@@ -23,7 +23,7 @@ router.post('/insert-one-item', async (req: Request, res: Response, next: NextFu
 
 router.get('/find-items', async (req, res, next) => {
     try {
-        const filter = req.body;
+        const filter = req.params;
         const results = await menuServices.find(filter);
         if (!results) {
             throw new Error("No matching items found.");

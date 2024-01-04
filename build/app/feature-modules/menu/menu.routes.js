@@ -35,7 +35,7 @@ router.post('/insert-one-item', (req, res, next) => __awaiter(void 0, void 0, vo
 }));
 router.get('/find-items', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const filter = req.body;
+        const filter = req.params;
         const results = yield menu_services_1.default.find(filter);
         if (!results) {
             throw new Error("No matching items found.");
